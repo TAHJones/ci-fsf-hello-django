@@ -1,6 +1,6 @@
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
-Welcome USER_NAME,
+Welcome Thomas,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
 
@@ -37,3 +37,32 @@ We continually tweak and adjust this template to help give you the best experien
 --------
 
 Happy coding!
+
+
+## Deployment
+
+pip3 install django
+
+So we're gonna CD into /workspace/.pip-modules/lib/python3.7/site-packages/
+And then the site packages directory.
+And if we now use the ls -la command in this directory to list out all of the files and directories inside it.
+
+We can use a shortcut cd - to get back to the last directory that we were working in.
+
+We'll type: django-admin startproject django_todo .
+
+We can use that manage.py utility By typing: python3 manage.py runserver
+
+Since we're going to build a to-do list. Let's create an app called todo
+
+To do that we can type: python3 manage.py startapp todo
+
+python3 manage.py makemigrations --dry-run
+
+python3 manage.py showmigrations
+
+python3 manage.py migrate --plan
+
+python3 manage.py migrate
+
+python3 manage.py createsuperuser
