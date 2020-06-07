@@ -1,0 +1,4 @@
+*.sqlite3
+__pycache__/
+django_todo/__pycache__/
+django_todo/__pycache__/settings.cpython-38.pyc
