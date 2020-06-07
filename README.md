@@ -122,7 +122,7 @@ DATABASES = {
 Required postgres database settings::
 ```
 DATABASES = {
-    'default': dj_database_url.parse('postgres://xfyymrqjtkenvi:dd090438a7cc6d799db261e94fef5f14f484e0900e5100de14cc442fc2b58e06@ec2-18-210-214-86.compute-1.amazonaws.com:5432/d6kkrlomb6ohv7')
+    'default': dj_database_url.parse('postgres://your_posgres_database_url')
 }
 ```
 10. To import `dj_database_url` add `import dj_database_url` at the top of the `setting.py` file (directly underneath `import os`).
