@@ -135,3 +135,25 @@ DATABASES = {
 ```
 ALLOWED_HOSTS = ['your-app-name.herokuapp.com']
 ```
+## Automatically Connecting Heroku to your GitHub Repository
+From the heroku dashboard of your new app, click on "Deploy" > "Deployment method" and select GitHub.
+
+In the `Connect to GitHub` enter the repository name in the search field. If the respository exists it will appear beneath the search field. Click `Connect`.
+
+In the **App connected to GitHub** section confirm the heroku app is linked to the correct GitHub repository.
+
+In the`Automatic deploys` section click `Enable Automatic Deploys`.
+
+## Set Config Vars in Heroku
+6. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+7. Set the following config vars:
+
+| Key | Value |
+ --- | ---
+DEBUG | FALSE
+IP | 0.0.0.0
+<!-- MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-kpu2s.mongodb.net/<database_name>?retryWrites=true&w=majority` -->
+PORT | 5000
+SECRET_KEY | `<your_secret_key>`
+HEROKU_HOSTNAME | your-app-name.herokuapp.com
