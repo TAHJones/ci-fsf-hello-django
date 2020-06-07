@@ -104,3 +104,26 @@ To install gunicorn or green unicorn - pip3 install gunicorn
 1. Create a `requirements.txt` file from the terminal using the command `pip3 freeze --local > requirements.txt`.
 2. Create a new app from the terminal using the following command `heroku apps:create your-app-name --region-eu`. The default region is the US , use the region flag to specify the region e.g `--region-eu` for Europe.
 3. To check your app has been created use the command `heroku apps`. The new app should appear in your list of apps on Heroku.
+4. To create a new postgres database on Heroku use the following command `heroku addons:create postgres?` Alternatively go to Heroku website and in the `resources` tab enter `postgres` in the `add-ons` search field and select `Heroku Postgres`. (To use mySQL database use an add on called `clear DB`)
+5. To check that the postgres add on has been successfully installed use the command `heroku addons`.
+6. To enable a connection to the remote postgres database install `dj-database_url` using the command `pip3 install dj-database_url`
+7. Update the `requirements.txt` file to include `dj-database_url` using the command `pip3 freeze --local > requirements.txt`.
+8. Use the command `heroku config` to get the postgres database url.
+9. In the `dijango_todo` folder open `setting.py` and replace the default database settings:
+Default database settings:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
+Required postgres database settings::
+```
+DATABASES = {
+    'default': dj_database_url.parse('postgres://xfyymrqjtkenvi:dd090438a7cc6d799db261e94fef5f14f484e0900e5100de14cc442fc2b58e06@ec2-18-210-214-86.compute-1.amazonaws.com:5432/d6kkrlomb6ohv7')
+}
+```
+10. To import `dj_database_url` add `import dj_database_url` at the top of the `setting.py` file (directly underneath `import os`).
+11. To transfer models and user information from default sqlite3 to postgres database use the command python3 `manage.py migrate`
