@@ -131,3 +131,7 @@ DATABASES = {
 12. Disable the collection of static file (there are no static css or js files associated with this project) using the following command `heroku config:set DISABLE_COLLECTSTATIC=1`.
 13. Use the command `git push heroku master` to deploy the app to heroku.
 14. Create a `Procfile` from the terminal using the command `echo web: gunicorn django_todo.wsgi:application > Procfile`.
+15. Add the app to the allowed app list in `setting.py` as follows:
+```
+ALLOWED_HOSTS = ['your-app-name.herokuapp.com']
+```
