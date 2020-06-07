@@ -66,3 +66,41 @@ python3 manage.py migrate --plan
 python3 manage.py migrate
 
 python3 manage.py createsuperuser
+
+
+## Testing
+
+pip3 install coverage
+
+coverage run --source=todo manage.py test
+
+coverage report
+
+coverage html
+
+python3 -m http.server
+
+
+## Heroku
+
+To install the Heroku cli follow the installation instructions at https://devcenter.heroku.com/articles/heroku-cli
+
+heroku login
+
+
+heroku - for list of commands e.g. apps
+
+heroku apps help - to learn how the apps command works
+
+
+## Postgres
+
+To install postgres database - pip3 install psycopg2-binary
+
+To install gunicorn or green unicorn - pip3 install gunicorn
+
+## How to Deploy Project Using Heroku
+
+1. Create a `requirements.txt` file from the terminal using the command `pip3 freeze --local > requirements.txt`.
+2. Create a new app from the terminal using the following command `heroku apps:create your-app-name --region-eu`. The default region is the US , use the region flag to specify the region e.g `--region-eu` for Europe.
+3. To check your app has been created use the command `heroku apps`. The new app should appear in your list of apps on Heroku.
