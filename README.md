@@ -127,3 +127,7 @@ DATABASES = {
 ```
 10. To import `dj_database_url` add `import dj_database_url` at the top of the `setting.py` file (directly underneath `import os`).
 11. To transfer models and user information from default sqlite3 to postgres database use the command python3 `manage.py migrate`
+12. Use the command `git push -u origin master` to update the github respository for this project.
+12. Disable the collection of static file (there are no static css or js files associated with this project) using the following command `heroku config:set DISABLE_COLLECTSTATIC=1`.
+13. Use the command `git push heroku master` to deploy the app to heroku.
+14. Create a `Procfile` from the terminal using the command `echo web: gunicorn django_todo.wsgi:application > Procfile`.
